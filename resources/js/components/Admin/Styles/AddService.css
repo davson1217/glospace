@@ -1,0 +1,6 @@
+..input-wrapper{
+    margin: 5px;
+}
+.input-wrapper input,.input-wrapper textarea{
+    width: 100%;
+}

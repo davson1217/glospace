@@ -1,0 +1,24 @@
+.quality-service,.value-for-money,.competitive-rates,.goods-safety{
+    list-style: none;
+}
+.quality-service:before,
+.value-for-money:before,
+.competitive-rates:before,
+.goods-safety:before{
+    content: '';
+    display: inline-block;
+    height: 4em;
+    width: 4em;
+    background-size:contain; 	background-repeat:no-repeat;
+}
+.quality-service:before{
+    background-image: url("/img/medal.svg");
+}.value-for-money:before{
+    background-image: url("/img/profit.svg");
+}.quality-service:before{
+    background-image: url("/img/medal.svg");
+}.goods-safety:before{
+    background-image: url("/img/shield.svg");
+}.competitive-rates:before{
+    background-image: url("/img/ranking.svg");
+}

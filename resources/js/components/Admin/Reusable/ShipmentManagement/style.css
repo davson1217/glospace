@@ -1,0 +1,15 @@
+div label{
+    line-height: 0.9;
+    color: #615f5f;
+    font-size: 14px;
+}
+.tracking-input::placeholder{
+    font-size: 14px;
+}
+.tracking-input{
+    outline:none;
+    border: 0;
+    border-bottom: 1px solid #c7c5c5 ;
+    font-weight: bold;
+    font-size: 13px;
+}

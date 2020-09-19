@@ -1,0 +1,32 @@
+.nav-container{
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+}
+.user-nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    /*background-color:#ccc ;*/
+}
+.user-nav ul li{
+    float: left;
+ }
+.list-icon-item span{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#second-nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}

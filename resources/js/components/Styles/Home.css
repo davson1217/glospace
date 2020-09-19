@@ -1,0 +1,43 @@
+.home-content-wrapper{
+    overflow-x: hidden;
+    height: 100vh;
+}
+.intro-about-us{
+    background-color: black;
+}
+.intro-about-us-text-wrap p{
+    color: white;
+    font-size: 14px;
+}
+.commitment-message-box{
+    background-image: url("/img/bg_side.jpg");
+    height: 500px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slider-wrapper{
+    width: 100%;
+    background-image: url("/img/slide1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.progressive-wrapper h4{
+    line-height: 48px;
+}
+.progressive-wrapper p{
+    width:40px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid lightgreen;
+    line-height: 48px;
+}
+.home-why-choose-us div p{
+     width: 40px;
+     padding-bottom: 10px;
+     border-bottom: 2px solid lightgreen;
+     line-height: 48px;
+}
+.home-about-us-list ul{
+
+}

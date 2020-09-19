@@ -1,0 +1,37 @@
+.ServiceContainer{
+    height: 100vh;
+}
+.service-title{
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+.service-title div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.service-title div p{
+    width: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid lightgreen;
+    line-height: 48px;
+}
+.service{
+    padding-bottom: 10px;
+}
+.service:hover{
+    background-color: #cffaf2;
+}
+.service-image{
+    margin-bottom: 50px;
+}
+.service-contact-us{
+    background-color: black;
+    padding: 20px;
+    margin-bottom: 30px;
+
+}
+.service-contact-us p{
+    font-size: 27px;
+}

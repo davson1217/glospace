@@ -1,0 +1,30 @@
+.side-text-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+.slide-one-wrapper{
+    /*position: absolute;*/
+    width:100%;
+    background-image: url("/img/slide1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100vh;
+}
+.head-one-wrap h2{
+    font-size: 55px;
+    color: white;
+}
+#first-hint, #second-hint, #third-hint{
+    color: white;
+}
+.head-two-wrap h2{
+    font-size: 3rem;
+    color: #ccffe3;
+}
+.track-btn-wrap{width: 100%}
+.track-btn-wrap button{
+    min-width: 80px;
+    border-radius: 9px;
+}
