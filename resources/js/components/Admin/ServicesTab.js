@@ -31,8 +31,10 @@ const ServicesTab = (props) =>{
         <div>
             <div className="row">
 
-                <div className="col-sm-12">
-                    <button className="btn btn-success" onClick={()=>props.toggleModal()}>Add Service</button>
+                <div className="col-sm-12 mt-2">
+                    <button className="btn btn-dark" onClick={()=>props.toggleModal()}>
+                        Add Service
+                    </button>
                 </div>
 
                 <div className="col-sm-12 mt-5">

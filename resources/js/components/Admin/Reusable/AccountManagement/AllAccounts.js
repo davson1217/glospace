@@ -10,20 +10,26 @@ const AllAccounts = props =>{
     const styles ={
         listItem:{
             cursor:'pointer',
+        },
+        accountActive:{
+            backgroundColor:  "black",
+            color:"white"
         }
     }
 
     return (
-        <li className="row" >
-            <div className="col-sm-12 mt-3 row" onClick={()=>props.toggleViewAccount(props.accountId,props.account.accounts)} style={ styles.listItem}>
+        <li className="row account" style={props.account.isShowAccountDetails && props.account.accountToView.id === props.accountId ?styles.accountActive:null}>
+
+            <div className="col-sm-12 mt-3 row">
                 <div className="col-sm-4">{props.GSNumber}</div>
-                <div className="col-sm-4">{props.name}</div>
+                <div className="col-sm-4" onClick={()=>props.toggleViewAccount(props.accountId,props.account.accounts)} style={ styles.listItem}>{props.name}</div>
                 <div className="col-sm-2">
                     {props.is_verified? <span className="text-success">Verified</span>
                         :
                         <span className="text-danger">Not Verified</span>}
                 </div>
             </div>
+
             <div className="col-sm-12 mt-1">
                 {props.account.isShowAccountDetails && props.account.accountToView.id === props.accountId
                     ?<AccountInfo
@@ -54,7 +60,7 @@ AllAccounts.propTypes = {
     accountId : PropTypes.number,
     name : PropTypes.string,
     GSNumber : PropTypes.string,
-    is_verified : PropTypes.number,
+    is_verified : PropTypes.string,
     verifiedStatus : PropTypes.func,
 }
 

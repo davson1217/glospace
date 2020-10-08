@@ -18,16 +18,18 @@ const PageIntro = props =>{
         pageTitle:{
             color:'white',
             fontWeight:'bold',
-            fontSize:'34px',
+            // fontSize:'34px',
         },
         pageDesc:{
             color:'white',
-            fontStyle:'italic',
-            fontSize:'30px'
+            marginTop:'20px',
+            fontFamily:`'Open Sans Condensed', sans-serif`,
+            fontStyle:'bold',//'italic'
+            fontSize:'40px'
         },
         introUnderline:{
             color:'white',
-            border:'2px solid lightgreen',
+            border:'2px solid #DD500A',
             width:'120px'
         },
 
@@ -36,7 +38,7 @@ const PageIntro = props =>{
         <div className="pageIntro" style={styles.introWrap}>
             <p style={styles.pageTitle}>{props.title}</p>
             <p style={styles.pageDesc}>{props.description}</p>
-            <div style={styles.introUnderline}/>
+            {/*<div style={styles.introUnderline}/>*/}
         </div>
     )
 }

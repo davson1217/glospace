@@ -7,6 +7,8 @@ import AccountsTab from "./AccountsTab";
 import VerifiedAccount from "./Reusable/AccountManagement/VerifiedAccounts";
 import UnVerifiedAccounts from "./Reusable/AccountManagement/UnVerifiedAccounts";
 import CreateShipmentTab from "./CreateShipmentTab";
+import ManageShipments from "./ManageShipments";
+import Payments from "./Payments";
 
 const ControlTabs = props =>{
 
@@ -35,6 +37,9 @@ const ControlTabs = props =>{
         case "About":
             ActiveTab = <AboutTab/>;
             break;
+        case "Invoice":
+            ActiveTab = <Payments/>
+            break;
         case "Accounts":
             if (props.accountTab === "All"){
                 ActiveTab = <AccountsTab
@@ -50,13 +55,8 @@ const ControlTabs = props =>{
 
         case "Shipment":
             if (props.shipmentTab === "Create"){
-                ActiveTab = <CreateShipmentTab
-                    labelClick={props.modalToggle}
-                    isShowModal={props.isShowModal}
-                    fetchShipments={props.fetchShipments}
-                    shipments = {props.shipmentLabels}
-                />
-            }else ActiveTab = <h4>Create Tab </h4>
+                ActiveTab = <CreateShipmentTab/>
+            }else ActiveTab = <ManageShipments/>
 
                 break;
         default: alert("UNKNOWN ERROR");
@@ -80,6 +80,7 @@ ControlTabs.propTypes = {
     //shipment
     shipmentTab: PropTypes.string,
     fetchShipments: PropTypes.func,
+    deleteShipment: PropTypes.func,
 }
 
 export default ControlTabs;

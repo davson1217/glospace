@@ -3,10 +3,10 @@ import './Css/Modal.css'
 import {connect} from 'react-redux'
 const SideModal = props =>{
     useEffect(()=> {
-        if (props.modal.isShow){
+        if (props.modal){
             document.getElementById('trigger-btn').click()
         }
-    },[props.modal.isShow])
+    },[])
     return (
         <div className="container demo">
             <div className="text-center" style={{display:"none"}}>
@@ -27,7 +27,7 @@ const SideModal = props =>{
                             </div>
                         </div>
                         <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={props.closeModal}>Close</button>
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ const SideModal = props =>{
 }
 const MapState = state =>{
     return {
-        modal: state.Modal
+        // modal: state.Modal
     }
 }
 

@@ -43,10 +43,10 @@ const AddSlide = props => {
                         <input placeholder={"Closing Text"} value={props.slides.closingText} onChange={(e)=>props.inputHandler("closingText",e,"Slides")}/>
                     </div>
                     <div className="col-sm-12 mt-2 text-center">
-                        <button className="btn btn-success"
+                        <button className="btn btn-dark"
                                 disabled={!props.slides.introText || !props.slides.headerTextOne || !props.slides.headerTextTwo
                                 || !props.slides.closingText || !props.slides.btnText || !props.slides.btnURL || !props.slides.bgPhoto }>
-                            Add Service
+                            Add Slide
                         </button>
                     </div>
                 </div>

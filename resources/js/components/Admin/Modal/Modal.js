@@ -4,16 +4,16 @@ import PropTypes from 'prop-types'
 
 const Modal = (props) =>{
     const styles = {
-        modalSize:{
-            width:props.modalWidth || "30%"
-        }
+        modalPosition:{paddingTop: props.modalPosition || "3%"},
+        modalHeader:{backgroundColor: props.headerColor ||'black'},
+        modalSize:{width:props.modalWidth || "30%", height:props.modalHeight || "90vh",}
     }
     return (
-        <div className="myModal" >
+        <div className="myModal" style={styles.modalPosition}>
             <div className="modal-content" id='modal-content' style={styles.modalSize}>
-                <div className="modal-header">
+                <div className="modal-header" style={styles.modalHeader}>
                     <span>{props.title || ''}</span>
-                    <span className="close" onClick={props.closeModal}>&times;</span>
+                    <span className="close" onClick={()=>props.closeModal(props.shipmentLabel)}>&times;</span>
                 </div>
 
                 <div className="modal-body">
@@ -29,6 +29,10 @@ Modal.propTypes ={
     title: PropTypes.string,
     closeModal: PropTypes.func,
     modalWidth: PropTypes.string,
+    headerColor: PropTypes.string,
+    modalHeight: PropTypes.string,
+    modalPosition: PropTypes.string,
+    shipmentLabel: PropTypes.string,
 }
 
 export default Modal;

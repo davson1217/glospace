@@ -1,6 +1,9 @@
-..input-wrapper{
+.input-wrapper{
     margin: 5px;
 }
 .input-wrapper input,.input-wrapper textarea{
     width: 100%;
+}
+.service:hover{
+    background-color: #fff3ed;
 }

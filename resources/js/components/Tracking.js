@@ -2,15 +2,19 @@ import React from 'react';
 import PageIntro from "./Reusable/PageIntro";
 import Footer from "./Reusable/Footer";
 import NavigationMenu from "./Reusable/Navigation";
+import {NavLink} from "react-router-dom";
 
 const TrackShipment = props =>{
     return (
         <div style={{height:'100vh'}}>
             <NavigationMenu/>
-            <PageIntro background={'/img/bg-subheader-tracking.jpg'} title={"Track Shipment"} description={"Some Description"}/>
+            <PageIntro background={'/img/bg-subheader-tracking.jpg'} title={"Track Shipment"} description={"Track Shipment"}/>
 
             <main className="container">
-                <div className="row">
+                <div className="text-center mt-5">
+                    <span>Please <b><NavLink to={'/login'}>Login or Register</NavLink></b> to continue with tracking a shipment from your Glospace dashboard.</span>
+                </div>
+                {/*  <div className="row">
                     <div className="col-sm-12">
                         <form className="mt-5">
                             <div className="row">
@@ -23,7 +27,7 @@ const TrackShipment = props =>{
                             </div>
                         </form>
                     </div>
-                </div>
+                </div>*/}
             </main>
 
             {/*<Footer/>*/}

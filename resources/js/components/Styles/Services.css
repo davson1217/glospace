@@ -1,5 +1,6 @@
 .ServiceContainer{
     height: 100vh;
+    overflow-x: hidden;
 }
 .service-title{
     text-align: center;
@@ -14,14 +15,14 @@
 .service-title div p{
     width: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid lightgreen;
+    border-bottom: 2px solid #DD500A;
     line-height: 48px;
 }
 .service{
     padding-bottom: 10px;
 }
 .service:hover{
-    background-color: #cffaf2;
+    background-color: #fff0e8;
 }
 .service-image{
     margin-bottom: 50px;

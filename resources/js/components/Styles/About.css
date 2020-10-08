@@ -11,14 +11,20 @@
     width: 4em;
     background-size:contain; 	background-repeat:no-repeat;
 }
-.quality-service:before{
-    background-image: url("/img/medal.svg");
-}.value-for-money:before{
-    background-image: url("/img/profit.svg");
+.we-do-list{
+    list-style:circle ;
+}
+.we-do-list li{
+    color: #5c5a5a;
+    font-size: 17px;
+    font-family: arial, serif;
+}
+.value-for-money:before{
+    background-image: url("/img/exchange.svg");
 }.quality-service:before{
-    background-image: url("/img/medal.svg");
+    background-image: url("/img/quality.svg");
 }.goods-safety:before{
     background-image: url("/img/shield.svg");
 }.competitive-rates:before{
-    background-image: url("/img/ranking.svg");
+    background-image: url("/img/star.svg");
 }

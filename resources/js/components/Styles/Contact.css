@@ -1,9 +1,36 @@
 
 .ContactContainer{
-    height: 100vh;
+    min-height: 100vh;
     background-color: #dcdcdc;
 }
 
+.contact-header h4,
+.input-desc,
+.address-desc-wrap span,
+.our-branch,
+.Georgia-branch,
+.contact-input{
+    color: #5c5a5a;
+    font-family: arial, serif;
+}
+
+.input-desc, .address-desc-wrap span{
+    font-size: 14px;
+}
 .contact-input{
     width: 100%;
+    outline: none;
+    border: 0;
+}
+.send-message-wrap button{
+    background-color: black;
+    color:white;
+    padding:5px;
+}
+.send-message-wrap button:hover{
+    background-color: black;
+    color:#DD500A;
+}
+.address-desc-wrap span{
+
 }

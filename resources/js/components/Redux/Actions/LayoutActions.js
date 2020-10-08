@@ -8,6 +8,15 @@ export const ToggleModal = (ref) =>{
     }
 }
 
+export const ViewService = (service) => {
+    return dispatch =>{
+        dispatch({
+            type: ActionTypes.VIEW_SERVICE_CLICK,
+            payload:{service}
+        })
+    }
+}
+
 export const SwitchLoginPage = (page) =>{
     return dispatch =>{
         dispatch({
@@ -16,13 +25,42 @@ export const SwitchLoginPage = (page) =>{
         })
     }
 }
+
+export const ShowLoader = (component) =>{
+    return dispatch =>{
+        dispatch({
+             type:ActionTypes.PAGE_LOADER,
+            payload:{component}
+        })
+    }
+}
+
 export const PageScroll = (e) =>{
+    // console.log("Hello")
     return dispatch =>{
         let node = e.current;
-        // console.log(node.scrollTop)
+        //console.log("HELLO",node.scrollTop)
         dispatch({
              type:ActionTypes.PAGE_SCROLL,
             payload:{scrollValue:node.scrollTop}
+        })
+    }
+}
+
+export const SubmitEnquiry = (data) =>{
+    return dispatch =>{
+            axios.post('/api/enquiry',data)
+                .then(res=>{
+
+                }).catch(err=>{})
+    }
+}
+
+export const APILoader = component =>{
+    return dispatch =>{
+        dispatch({
+            type: ActionTypes.REQUEST_LOADER,
+            payload:{component}
         })
     }
 }

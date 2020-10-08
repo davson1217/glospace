@@ -3,13 +3,15 @@
     z-index: 1000;
     width: 100%;
 }
+
 .user-nav ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    /*background-color:#ccc ;*/
+    /*background-color:#ccc;*/
 }
+
 .user-nav ul li{
     float: left;
  }
@@ -20,6 +22,14 @@
     padding: 14px 16px;
     text-decoration: none;
 }
+.list-icon-item .nav-icons:hover{
+    /*color: white;*/
+    /*transition: 0.1s;*/
+}
+.list-icon-item span .login-link{
+    color: #DD500A;
+}
+
 #second-nav {
     list-style-type: none;
     margin: 0;

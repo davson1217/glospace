@@ -5,7 +5,8 @@ const initialState = {
     accountToView:[],
     accounts:[],
     accountTab: "All",
-
+    GSearch:"",
+    // radioValue:'All',
 }
 
 const AccountManagement = (state = initialState, action) =>{
@@ -25,6 +26,12 @@ const AccountManagement = (state = initialState, action) =>{
             return{
                 ...state,
                 accountTab: action.payload.tab,
+            }
+        case ActionTypes.INPUT_HANDLER:
+            // console.log("here")
+            return{
+                ...state,
+                [action.payload.name]: action.payload.value,
             }
 
         default: return state;

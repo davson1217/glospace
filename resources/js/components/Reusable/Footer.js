@@ -7,13 +7,14 @@ const Footer = props =>{
         backgroundColor: 'black',
         textAlign:'center',
         marginTop:"30px",
-        minHeight:'80px',
+        padding:"5px",
+        // minHeight:'50px',
         // position:"absolute",
         // bottom:"0"
     }
     return(
         <div style={styles}>
-            <span className='text-light'> Copyright 2020&copy;</span>
+            <span className='text-muted'> Copyright 2020&copy;</span>
         </div>
     )
 }

@@ -9,54 +9,66 @@ import ServicesList from "./Reusable/ServicesList";
 import ContactBanner from "./Reusable/ContactBanner";
 import * as LayoutActions from "./Redux/Actions/LayoutActions";
 import {connect} from "react-redux";
+import {FetchServiceHandler} from "./Redux/Actions/AdminActions";
+import OpenPageLoader from "./Reusable/PageLoader";
 
 const Services = props => {
     const rootRef = useRef(null)
     useEffect(()=>{
+        props.fetchServices();
+        setTimeout(()=>{
+            props.showLoader("Service")
+        },1300)
+    },[])
 
-    },[props.layout.scrollValue])
+    let page;
+    page = props.layout.openPageLoader.service ? <OpenPageLoader/>:
+        (
+            <div className='ServiceContainer' ref={rootRef} id={"service_container"} onScroll={()=>console.log("k")}>
+                {/*----Page Intro Section*/}
+                <NavigationMenu topValue={props.layout.scrollValue}/>
+                <PageIntro
+                    background={'/img/bg-subheader-service.jpg'}
+                    title={'Services'}
+                    description={'Services'}
+                />
+                {/*----Page Intro Section END----*/}
 
-    return (
-        <div className='ServiceContainer' ref={rootRef} id={"service_container"} onScroll={()=>console.log("k")}>
-        {/*----Page Intro Section*/}
-            <NavigationMenu topValue={props.layout.scrollValue}/>
-            <PageIntro
-                background={'/img/bg-subheader-service.jpg'}
-                title={'Services'}
-                description={'Service Descriptions'}
-            />
-        {/*----Page Intro Section END----*/}
+                {/* Page Main Content */}
+                <main className='container'>
+                    <ServicesList services={props.services}/>
 
-        {/* Page Main Content */}
-            <main className='container'>
-                <ServicesList/>
+                    <section className="col-sm-12 pb-4" style={{backgroundColor:"black",padding:"20px",marginBottom:"30px"}}>
+                        <ContactBanner/>
+                    </section>
 
-                <section className="col-sm-12 pb-4" style={{backgroundColor:"black",padding:"20px",marginBottom:"30px"}}>
-                    <ContactBanner/>
-                </section>
+                </main>
+                {/* Page Main Content END*/}
 
-            </main>
-        {/* Page Main Content END*/}
+                {/* --------Page Footer Begin--------*/}
+                <div className="footer" style={{minHeight:"5vh"}}>
+                    <Footer/>
+                </div>
+                {/* --------Page Footer End--------*/}
+            </div>
+        )
 
-        {/* --------Page Footer Begin--------*/}
-        <div className="footer" style={{minHeight:"5vh"}}>
-            <Footer/>
-        </div>
-        {/* --------Page Footer End--------*/}
-        </div>
-    )
+    return page
 }
 
 const MapState = state =>{
     return {
-        layout : state.Layout
+        layout : state.Layout,
+        services : state.Admin.services
     }
 }
 
 const MapDispatch = dispatch =>{
     return {
         toggleModal : () => dispatch(LayoutActions.ToggleModal()),
+        showLoader : (comp) => dispatch(LayoutActions.ShowLoader(comp)),
         pageScroll : (scrollValue) => dispatch(LayoutActions.PageScroll(scrollValue)),
+        fetchServices : () => dispatch(FetchServiceHandler()),
     }
 }
 

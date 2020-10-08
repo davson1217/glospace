@@ -18,19 +18,7 @@ const SlidesTab = (props) => {
     )
     if (Object.keys(props.slides).length){
         slides = props.slides.map((item,index)=>{
-            return <Slide
-                bg={item.bg}
-                side={item.side_photo}
-                buttonText={item.button_text}
-                buttonURL={item.button_link}
-                headerOne={item.header_one}
-                headerTwo={item.header_two}
-                closing={item.closing_text}
-                intro={item.intro_text}
-                deleteSlide={props.deleteSlide}
-                slideId={item.id}
-                key={index}
-            />
+            return <Slide deleteSlide={props.deleteSlide} key={index} slide={item}/>
         })
     }
 
@@ -38,8 +26,8 @@ const SlidesTab = (props) => {
         <div>
             <div className="row">
 
-                <div className="col-sm-12">
-                    <button className="btn btn-success" onClick={()=>props.toggleModal()}>Add Slide</button>
+                <div className="col-sm-12 mt-2">
+                    <button className="btn btn-dark" onClick={()=>props.toggleModal()}>Add Slide</button>
                 </div>
 
                 <div className="col-sm-12 mt-5">
@@ -47,18 +35,22 @@ const SlidesTab = (props) => {
                         {slides}
                     </div>
                 </div>
+
             </div>
-            {props.isShowModal?
-                <Modal title={"Add Slide"} closeModal={props.toggleModal}>
+
+            {
+                props.isShowModal?
+                <Modal title={"Add Slide"} closeModal={()=>props.toggleModal(null)}>
                    <AddSlide />
                 </Modal>
                 :
-                null}
+                null
+            }
         </div>
     )
 }
 
-ServicesTab.propTypes ={
+SlidesTab.propTypes ={
     isShowModal: PropTypes.bool,
     toggleModal: PropTypes.func,
     fetchSlides: PropTypes.func,

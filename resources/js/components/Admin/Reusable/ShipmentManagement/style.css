@@ -6,10 +6,24 @@ div label{
 .tracking-input::placeholder{
     font-size: 14px;
 }
+
+
 .tracking-input{
+    font-weight: normal;
+}
+
+.tracking-input,.add-progress-input{
     outline:none;
     border: 0;
     border-bottom: 1px solid #c7c5c5 ;
-    font-weight: bold;
     font-size: 13px;
 }
+
+/*  Labels */
+.del-icon-wrap{
+    position:absolute;
+    z-index: 1000;
+    right:10px;
+    top:60px
+}
+

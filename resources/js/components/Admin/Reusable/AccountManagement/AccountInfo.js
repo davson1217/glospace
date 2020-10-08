@@ -43,7 +43,7 @@ export const AccountInfo = props =>{
                 </li>
             </ul>
             <div className="text-center">
-                {verifiedBtn}
+                {/*{verifiedBtn}*/}
             </div>
         </div>
     )

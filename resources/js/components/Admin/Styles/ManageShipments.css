@@ -1,0 +1,22 @@
+.speech-bubble {
+    position: absolute;
+    z-index: 10;
+    width: 250px;
+    /*bottom:10px;*/
+    background: #DD500A;
+    border-radius: .4em;
+}
+
+.speech-bubble:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 16px solid transparent;
+    border-bottom-color: #DD500A;
+    border-top: 0;
+    margin-left: -16px;
+    margin-top: -16px;
+}

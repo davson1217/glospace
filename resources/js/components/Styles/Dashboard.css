@@ -1,0 +1,142 @@
+.dashboard-root{
+    min-height: 100vh;
+    background-color: #f2f2f2;
+}
+.dashboard-container{
+    background-color: white;
+}
+.mySpace-section{
+    background-color:white ;
+}
+.client-info #user-wrap, .gs-info #user-gs-wrap{
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.client-info span, .gs-info span{
+    font-size: 13px;
+    font-weight: bolder;
+    margin-bottom: 5px;
+    color:#636363;
+    font-family: Serif;
+    display: block;
+}
+.menu-section{
+    /*background-color: black;*/
+}
+.mySpace-section,.menu-content{
+    width:100%;
+    /*// height:"500%",*/
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*border-left:10px solid;*/
+    /*border-color:#DD500A;*/
+}
+
+.dashboard-menu{
+    list-style: none;
+    width: 100%;
+}
+.dashboard-menu li:hover{
+    border-bottom: 2px solid #DD500A;
+    cursor: pointer;
+}
+
+.dashboard-menu li img{
+    width: 50px;
+}
+
+/*Tracking menu content styles*/
+.tracking-num-input-wrap input{
+    border: 1px solid grey;
+    font-size: 14px;
+    font-family: serif;
+}
+.tracking-num-input-wrap input::placeholder{
+    font-size: 14px;
+    font-family: serif;
+}
+
+.tacking-wrapper h5{
+    font-size: 20px;
+    font-family: arial serif;
+    font-weight: 200;
+}
+
+.tracking-num-input-wrap input:focus{
+    outline: none;
+}
+.progress-toggler{
+    color:white;
+     background-color: black;
+    cursor:pointer
+}
+.shipment-xtra .xtra{
+    display: block;
+    font-size: 15px;
+    font-family: serif;
+}
+.xtra span{
+    font-weight: bold;
+    font-size: 13px;
+    font-family: serif;
+}
+/* Tracking menu content styles END*/
+
+
+
+/*Invoice menu content styles*/
+.invoice-menu-nav li{
+    float: left;
+    cursor:pointer;
+    font-weight: bold;
+    font-family: arial serif;
+}
+.invoice-menu-nav li:hover{
+    /*color:#DD500A;*/
+}
+.invoice-menu-nav li span{
+    display: block;
+    padding: 5px;
+}
+.invoice-menu-nav{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*Settings Menu*/
+.settings-nav{height: 100%}
+.settings-nav ul{list-style: none;background-color:#fafafa}
+.settings-nav ul li{
+    cursor:pointer;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: arial serif;
+}
+.settings-nav ul li:hover{color:#DD500A}
+.setting-change-form{
+    text-align: center;
+}
+.setting-change-form input{
+    width: 100%;
+    font-size:13px;
+    outline: none;
+    border:1px solid #95999c;
+    margin-bottom: 4px;
+}
+.setting-change-form button{
+    outline:none;
+    font-size:15px;
+    font-family: serif;
+}
+
+/* Dashboard Media Queries */
+@media screen and (max-width: 780px) {
+    .dashboard-menu{
+        display: flex;
+        /*flex-direction: row;*/
+    }
+    .dashboard-menu li img{
+        width:40px;
+    }
+}

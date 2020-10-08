@@ -23,7 +23,7 @@ class CreateSlidesTable extends Migration
             $table->string("button_text");
             $table->string("button_link");
             $table->string("bg");
-            $table->string("side_photo");
+            $table->string("side_photo")->nullable();
         });
     }
 

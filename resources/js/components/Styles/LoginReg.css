@@ -1,0 +1,73 @@
+.auth-nav{
+    /*background-image: linear-gradient(to right, white,white,#e8712c );*/
+    background-color: white;
+}
+.login-text-wrap h5, .register-text-wrapper h5{
+    font-size: 20px;
+    font-family: arial serif;
+    font-weight: 200;
+}
+.login-input-wrapper input{
+    border: 1px solid lightgrey;
+    padding:15px;
+    color:grey;
+    font-family: serif;
+}
+.login-input-wrapper input::placeholder, .register-input-wrapper input::placeholder{
+    font-family: serif;
+    font-size: 15px;
+}
+
+.login-input-wrapper input:focus{
+    /*background-color: #fcc8a9;*/
+    outline: none;
+}
+.login-button-wrapper button, .register-submit-wrapper button{
+    /*background-color: #e8712c;*/
+    background-image: linear-gradient(to right, #e8712c,white );
+    color:black;
+    font-weight: bolder
+}
+.register-btn-wrapper, .login-btn-wrapper{
+    color: #a1603a;
+    font-family: "Lucida Console", monospace, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+.register-btn-wrapper span , .login-btn-wrapper span{
+    cursor: pointer;
+    text-decoration: underline;
+    /*text-decoration-color: ;*/
+}
+.error-message{
+    font-family: arial serif;
+    color:#DD500A;
+
+}
+
+/*Register Component Style*/
+.register-container{
+    border:1px solid lightgrey;
+    width : 700px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color:white;
+}
+
+.register-input-wrapper{
+    margin-bottom: 5px;
+}
+.register-input-wrapper input{
+    border: none;
+    border-bottom: 1px solid grey;
+    color:grey;
+    font-family: serif;
+}
+.register-input-wrapper input:focus{
+    outline:none;
+}
+.registrationHelper{
+    display: block;
+    font-weight: bold;
+    color:#DD500A;
+    transition: 0.3s;
+}

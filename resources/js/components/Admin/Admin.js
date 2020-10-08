@@ -1,11 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import SideBar from "./Nav/Sidebar";
 import {connect} from "react-redux";
+import {useHistory} from 'react-router-dom';
 import ControlTabs from "./ControlTabs";
 import * as Actions  from "../Redux/Actions/AdminActions";
-import {FetchShipments} from "../Redux/Actions/ShipmentActions";
+import {DeleteShipment, FetchShipments} from "../Redux/Actions/ShipmentActions";
 
 const Admin = props =>{
+
+    useEffect(()=>{
+        if (!localStorage.getItem('adminToken')){
+            const history = useHistory();
+            history.push('/admin')
+        }
+    },[])
+
         return (
             <div className="row">
                 <div className="col-lg-2">
@@ -33,6 +42,7 @@ const Admin = props =>{
                         //Shipment
                         shipmentTab={props.shipmentStore.activeTab}
                         fetchShipments={props.fetchLabels}
+                        deleteShipment={props.deleteLabel}
                         shipmentLabels={props.shipmentStore.shipmentLabels}
                     />
                 </div>
@@ -70,7 +80,11 @@ const MapDispatch = dispatch => {
         fetchAccounts : () => dispatch(Actions.FetchAccountsHandler()),
 
         //Shipments Actions
-        fetchLabels : () => dispatch(FetchShipments()),
+        fetchLabels : (limit) => dispatch(FetchShipments(limit)),
+        deleteLabel : (shipmentId) => {
+            if (confirm("Are you sure ?"))
+            dispatch(DeleteShipment(shipmentId))
+        },
     }
 }
 

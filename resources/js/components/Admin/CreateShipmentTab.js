@@ -1,37 +1,33 @@
 import React,{useEffect} from 'react';
 import TrackingCreate from "./Reusable/ShipmentManagement/TrackingCreate";
-import Labels from "./Reusable/ShipmentManagement/Labels";
 import PropTypes from 'prop-types'
-import Modal from "./Modal/Modal";
-import LabelView from "./Reusable/ShipmentManagement/LabelView";
+import ManageShipments from "./ManageShipments";
+import Feedback from "../Redux/Feedback";
+import {connect } from 'react-redux'
 
 const CreateShipmentTab = props =>{
+
     useEffect(()=>{
-        props.fetchShipments();
+        // props.fetchShipments(3);
     },[]);
-
-    //shipment labels to show on document mount
-    let labels ;
-    if (Object.keys(props.shipments).length){
-        labels = props.shipments.map((item,index)=>{
-            return <Labels key={index} onLabelClick={props.labelClick} label={item}/>
-        })
-    }else if (props.shipments.length === 0) labels = <h5>Loading</h5>
-
-    //Modal to show shipment details on label click
-    let viewShipment = props.isShowModal ?
-            <Modal title={props.GSNumber || "Tracking Number"} closeModal={()=>props.labelClick()} modalWidth={"70%"}>
-                <LabelView/>
-            </Modal>: null
 
     return(
             <div>
-                   <TrackingCreate/>
+                {/*   Shipment creation form */}
+
+                <TrackingCreate/>
+
                    <div className="mt-3">
                        <small className="text-primary"><u>Recent Labels</u></small>
-                       {labels}
+
+                       <div className="p-1 mb-5">
+                           <ManageShipments fromCreate={true}/>
+                       </div>
                    </div>
-                    {viewShipment}
+                {props.Feedback.showFeedback && props.Feedback.feedbackComponent === "CREATE_SHIPMENT"?
+                    <Feedback message={props.Feedback.feedbackMessage}/>
+                    : null
+                }
                 </div>
          )
 }
@@ -39,10 +35,23 @@ const CreateShipmentTab = props =>{
 CreateShipmentTab.propTypes ={
     labelClick: PropTypes.func,
     fetchShipments: PropTypes.func,
+    labelDeleteClick: PropTypes.func,
     isShowModal:PropTypes.bool,
     GSNumber:PropTypes.string,
 
     shipments: PropTypes.array,
 }
 
-export default CreateShipmentTab;
+
+const MapState = state =>{
+    return{
+        Feedback : state.Feedback
+    }
+}
+
+const MapDispatch = dispatch =>{
+    return {
+
+    }
+}
+export default connect(MapState,MapDispatch)(CreateShipmentTab);

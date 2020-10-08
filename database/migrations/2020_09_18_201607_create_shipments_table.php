@@ -16,13 +16,18 @@ class CreateShipmentsTable extends Migration
         Schema::create('shipments', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string("user_gs_number");
+            $table->string("sender_user_gs_number");
+            $table->string("receiver_user_gs_number");
             $table->string("tracking_number")->unique();
             $table->date("estimated_delivery");
             $table->string("delivery_note")->nullable();
             $table->string("package_description");
-            $table->smallInteger("progress_bar")->default(10);
-            $table->foreign("user_gs_number")->references('gs_number')->on('users')->onDelete("RESTRICT")->onDelete("RESTRICT");
+            $table->float("package_weight")->default(0);
+            $table->smallInteger("progress_bar")->default(1)->nullable();
+            $table->tinyInteger("is_show_bar")->default(1);
+            $table->tinyInteger("is_complete")->default(0);
+            $table->foreign("sender_user_gs_number")->references('gs_number')->on('users')->onUpdate("RESTRICT")->onDelete("CASCADE");
+            $table->foreign("receiver_user_gs_number")->references('gs_number')->on('users')->onUpdate("RESTRICT")->onDelete("CASCADE");
         });
     }
 

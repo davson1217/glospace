@@ -1,0 +1,22 @@
+
+/* Invoice Display Page */
+.invoice-header-info div,
+.invoice-clients,
+.invoice-table-headers,
+.invoice-table-data{
+    font-size: 14px;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+    color: #313131;
+}
+.clients-headers{
+    font-weight: bolder;
+    font-size: 15px;
+    color: black;
+}
+.invoice-info{
+    background-color: black;
+    color: #DD500A;
+    width: 300px;
+    padding: 10px;
+    word-wrap: break;
+}

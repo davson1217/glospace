@@ -1,20 +1,37 @@
 .home-content-wrapper{
     overflow-x: hidden;
     height: 100vh;
+    width:100%;
+    transition: 0.3s;
 }
+
 .intro-about-us{
     background-color: black;
 }
+
 .intro-about-us-text-wrap p{
     color: white;
     font-size: 14px;
 }
+.home-about-us-list ul{
+    list-style: circle;
+}
+.home-about-us-list ul li{font-family: serif;}
+.home-about-us-list ul li h6{ font-weight: bold}
+.home-about-us-list ul li p{
+    font-size: 15px;
+}
 .commitment-message-box{
-    background-image: url("/img/bg_side.jpg");
-    height: 500px;
+    background-image: url("/img/blackbg.jpg");
+    /*height: 500px;*/
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.brand-quote{
+    font-size: 30px;
+    color:white;
+    font-family: "Bookman Old Style";
 }
 .slider-wrapper{
     width: 100%;
@@ -29,13 +46,13 @@
 .progressive-wrapper p{
     width:40px;
     padding-bottom: 10px;
-    border-bottom: 2px solid lightgreen;
+    border-bottom: 2px solid #DD500A;
     line-height: 48px;
 }
 .home-why-choose-us div p{
      width: 40px;
      padding-bottom: 10px;
-     border-bottom: 2px solid lightgreen;
+     border-bottom: 2px solid #DD500A;
      line-height: 48px;
 }
 .home-about-us-list ul{

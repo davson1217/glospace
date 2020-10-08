@@ -28,7 +28,7 @@ const AddService = props => {
                         <textarea placeholder={"Service Description"} value={props.service.description} onChange={(e)=>props.inputHandler("description",e,"Services")}/>
                     </div>
                     <div className="col-sm-12">
-                        <button className="btn btn-success"
+                        <button className="btn btn-dark"
                             disabled={!props.service.title || !props.service.description || !props.service.servicePhoto}
                         >Add Service</button>
                     </div>
