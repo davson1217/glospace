@@ -149,7 +149,7 @@ const Contact = props => {
                                                 </div>
                                             </div>
 
-                                            <div className="col-sm-12 col-lg-5">
+                                            {/*<div className="col-sm-12 col-lg-5">
                                                 <div className="col-sm-12 mb-3 Georgia-branch">
                                                     <b><img src={"/img/nigeria.svg"} alt="GE" width={22}/> Nigeria </b>
                                                 </div>
@@ -162,7 +162,7 @@ const Contact = props => {
                                                 <div className="col-sm-12 mb-3 address-desc-wrap">
                                                     <img src={"/img/phone.svg"} alt="phone" width={20}/> <span className="ml-2">+234 591 880 567</span>
                                                 </div>
-                                            </div>
+                                            </div>*/}
 
                                         </div>
                                     </div>
