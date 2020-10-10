@@ -131,7 +131,7 @@ const Contact = props => {
 
                                             <div className="col-sm-12 col-lg-7">
                                                 <div className="col-sm-12 mb-3 Georgia-branch">
-                                                    <b><img src={"/img/Georgia.svg"} alt="GE" width={22}/> Georgia </b>
+                                                    <b><img src={"/img/georgia.svg"} alt="GE" width={22}/> Georgia </b>
                                                     (Head Office)
                                                 </div>
 

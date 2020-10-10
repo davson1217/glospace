@@ -1,7 +1,7 @@
 export const Fonts = {
     Header:`'Open Sans Condensed', sans-serif`,
-    SubHeader:`sans-serif`,//"Courier New", Courier, monospace
-    Text:`"Arial, serif`,
+    SubHeader:`sans serif`,//"Courier New", Courier, monospace
+    Text:`"serif`,
 }
 
 export const FontSize = {

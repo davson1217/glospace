@@ -34,7 +34,7 @@ const About = props => {
         },
         sectionText:{
             color: '#5c5a5a',
-            fontSize: '17px',
+            fontSize: '14px',
             fontFamily: Constants.Fonts.Text
         },
         underline:{

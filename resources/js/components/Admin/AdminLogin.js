@@ -103,7 +103,8 @@ const MapDispatch = dispatch =>{
             const data = {
                 grant_type: 'password',
                 client_id: '2',//3
-                client_secret: 'LSI1kFQLgttzTk9n5gIwBE1CGxhdAWsmyudTjVO5',// HPeYmIm4h0MpkfYEZszIttR4w5Q5o9ueeSFzqHWi
+                client_secret: 'LSI1kFQLgttzTk9n5gIwBE1CGxhdAWsmyudTjVO5',// HPeYmIm4h0MpkfYEZszIttR4w5Q5o9ueeSFzqHWi LSI1kFQLgttzTk9n5gIwBE1CGxhdAWsmyudTjVO5
+                //remote secret: LSI1kFQLgttzTk9n5gIwBE1CGxhdAWsmyudTjVO5
                 username,password
             }
             let param = '';

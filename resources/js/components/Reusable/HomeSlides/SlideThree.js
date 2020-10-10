@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Slides from "./Slides";
 import {connect} from "react-redux";
+import {NavLink} from "react-router-dom";
 
 const SlideThree = (props) =>{
     let slide ="";
@@ -30,7 +31,9 @@ const SlideThree = (props) =>{
                                 </div>
 
                                 <div className="col-sm-12 mt-4 track-btn-wrap text-center">
-                                    <button className="btn btn-secondary">{props.slides[2].button_text}</button>
+                                    <NavLink to={`${props.slides[2].button_link}`} style={{textDecoration:"none", color:"white"}}>
+                                        {props.slides[2].button_text}
+                                    </NavLink>
                                 </div>
 
                                 <div className="col-sm-12 mt-4 closing-text text-center">
