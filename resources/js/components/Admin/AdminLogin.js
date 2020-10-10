@@ -102,8 +102,8 @@ const MapDispatch = dispatch =>{
             dispatch({type:ActionTypes.API_REQUEST_SENT,payload:{component:"ADMIN_LOGIN"}})
             const data = {
                 grant_type: 'password',
-                client_id: '3',
-                client_secret: 'HPeYmIm4h0MpkfYEZszIttR4w5Q5o9ueeSFzqHWi',
+                client_id: '2',//3
+                client_secret: 'LSI1kFQLgttzTk9n5gIwBE1CGxhdAWsmyudTjVO5',// HPeYmIm4h0MpkfYEZszIttR4w5Q5o9ueeSFzqHWi
                 username,password
             }
             let param = '';
