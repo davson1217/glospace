@@ -26,6 +26,7 @@ const Home = props => {
     const rootRef = useRef(null);
 
     useEffect(()=>{
+        document.title = "Glospace | Home"
         props.fetchSlides();
         props.fetchServices();
         setTimeout(()=>{

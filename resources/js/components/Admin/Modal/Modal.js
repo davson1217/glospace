@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 
 const Modal = (props) =>{
     const styles = {
-        modalPosition:{paddingTop: props.modalPosition || "3%"},
+        modalPosition:{paddingTop:  screen.width <= 700? "40%" : props.modalPosition || "3%"},
         modalHeader:{backgroundColor: props.headerColor ||'black'},
-        modalSize:{width:props.modalWidth || "30%", height:props.modalHeight || "90vh",}
+        modalSize:{width: screen.width <= 780 ? "90%" : props.modalWidth || "30%", height:props.modalHeight || "90vh",}
     }
     return (
         <div className="myModal" style={styles.modalPosition}>

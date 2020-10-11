@@ -15,6 +15,7 @@ import OpenPageLoader from "./Reusable/PageLoader";
 const Services = props => {
     const rootRef = useRef(null)
     useEffect(()=>{
+        document.title = "Glospace | Services"
         props.fetchServices();
         setTimeout(()=>{
             props.showLoader("Service")

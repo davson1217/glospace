@@ -31,9 +31,11 @@ const SlideThree = (props) =>{
                                 </div>
 
                                 <div className="col-sm-12 mt-4 track-btn-wrap text-center">
-                                    <NavLink to={`${props.slides[2].button_link}`} style={{textDecoration:"none", color:"white"}}>
-                                        {props.slides[2].button_text}
-                                    </NavLink>
+                                    <button className="btn btn-secondary">
+                                        <NavLink to={`${props.slides[2].button_link}`} style={{textDecoration:"none", color:"white"}}>
+                                            {props.slides[2].button_text}
+                                        </NavLink>
+                                    </button>
                                 </div>
 
                                 <div className="col-sm-12 mt-4 closing-text text-center">

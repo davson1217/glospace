@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import PageIntro from "./Reusable/PageIntro";
 import Footer from "./Reusable/Footer";
 import NavigationMenu from "./Reusable/Navigation";
 import {NavLink} from "react-router-dom";
 
 const TrackShipment = props =>{
+    useEffect(()=>{
+        document.title = "Glospace | Tracking"
+    })
     return (
         <div style={{height:'100vh'}}>
             <NavigationMenu/>

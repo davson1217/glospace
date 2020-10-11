@@ -12,6 +12,7 @@ import OpenPageLoader from "./Reusable/PageLoader";
 const About = props => {
 
     useEffect(()=>{
+        document.title = "Glospace | About"
         setTimeout(()=>{
             props.showLoader("About")
         },1300)

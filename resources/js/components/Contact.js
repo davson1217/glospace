@@ -11,6 +11,7 @@ import OpenPageLoader from "./Reusable/PageLoader";
 const Contact = props => {
 
     useEffect(()=>{
+        document.title = "Glospace | Contact"
         setTimeout(()=>{
             props.showLoader("Contact")
         },1300)

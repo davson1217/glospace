@@ -9,6 +9,7 @@ import {DeleteShipment, FetchShipments} from "../Redux/Actions/ShipmentActions";
 const Admin = props =>{
 
     useEffect(()=>{
+        document.title = "Glospace | Admin"
         if (!localStorage.getItem('adminToken')){
             const history = useHistory();
             history.push('/admin')

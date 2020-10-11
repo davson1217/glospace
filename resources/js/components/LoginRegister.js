@@ -17,6 +17,7 @@ const LoginRegister = props =>{
     let history = useHistory();
 
     useEffect(()=>{
+        document.title = "Glospace | Login | Register"
         if (props.Register.userRegistered || localStorage.getItem("token")){
             history.push("/dashboard")
         }
