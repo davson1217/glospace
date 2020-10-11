@@ -14,7 +14,7 @@ const AuthRequest = (username,password,comp) =>{
     const data = {
         grant_type: 'password',
         client_id: '2',
-        client_secret: 'c0PAYjNYH9SnZuvoHjyt9diHaVHl77TIYpeCKrF8',
+        client_secret: 'VZzlrXdwrxKZ1FXFzcJnnPFcgs5HSOQ3au8mJBTo',
         username,password
     }
     let param = '';
