@@ -11,7 +11,7 @@ const AdminLogin = (props)=>{
 
     useEffect(()=>{
         if (props.login.isAuthenticated || localStorage.getItem("adminToken")){
-            history.push('/admin/dashboard')
+            history.push('/gezwiz/dashboard')
         }
     },[props.login.isAuthenticated])
 

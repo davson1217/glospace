@@ -12,7 +12,7 @@ const Admin = props =>{
         document.title = "Glospace | Admin"
         if (!localStorage.getItem('adminToken')){
             const history = useHistory();
-            history.push('/admin')
+            history.push('/gezwiz')
         }
     },[])
 

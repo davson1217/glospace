@@ -26,7 +26,7 @@ function App(props) {
             <Switch>
                 <Route path={'/invoice/:invoice_number'} component={InvoiceTable}/>
                 <Route exact path={'/paymentUpload/:filename'} component={FileDisplay}/>
-                <Route path={'/admin/dashboard'} component={Admin}/>
+                <Route path={'/gezwiz/dashboard'} component={Admin}/>
                 <Route path={'/admin/super/super'} component={CreateSuperAdmin}/>
                 <Route path={'/gezwiz'} component={AdminLogin}/>
                 <Route path={'/dashboard/:userId'} component={VerifyEmail}/>

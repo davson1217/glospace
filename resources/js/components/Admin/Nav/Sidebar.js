@@ -71,7 +71,7 @@ const SideBar = props =>{
                 <div className="text-danger">
                     <button className="btn btn-dark"  onClick={()=>{
                         localStorage.removeItem("adminToken");
-                        location="/admin"
+                        location="/gezwiz"
                     }} >Logout</button>
                 </div>
             </div>
