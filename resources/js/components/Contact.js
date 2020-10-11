@@ -32,7 +32,7 @@ const Contact = props => {
                 <NavigationMenu/>
                 <PageIntro
                     background={'/img/bg-subheader-contact.jpg'}
-                    title={'C'}
+                    title={''}
                     description={'Contact Us'}
                 />
 

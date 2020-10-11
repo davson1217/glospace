@@ -17,6 +17,7 @@ const PageIntro = props =>{
         },
         pageTitle:{
             color:'white',
+            marginTop:'5px',
             fontWeight:'bold',
             // fontSize:'34px',
         },

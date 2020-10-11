@@ -11,7 +11,7 @@ const TrackShipment = props =>{
     return (
         <div style={{height:'100vh'}}>
             <NavigationMenu/>
-            <PageIntro background={'/img/bg-subheader-tracking.jpg'} title={"Track Shipment"} description={"Track Shipment"}/>
+            <PageIntro background={'/img/bg-subheader-tracking.jpg'} title={" "} description={"Track Shipment"}/>
 
             <main className="container">
                 <div className="text-center mt-5">

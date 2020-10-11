@@ -52,7 +52,7 @@ const About = props => {
             <NavigationMenu/>
             <PageIntro
                 background={'/img/bg-subheader-service.jpg'}
-                title={'About'}
+                title={''}
                 description={'About Us'}
             />
             {/*----Page Intro Section END----*/}

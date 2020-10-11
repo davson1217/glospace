@@ -30,7 +30,7 @@ const Services = props => {
                 <NavigationMenu topValue={props.layout.scrollValue}/>
                 <PageIntro
                     background={'/img/bg-subheader-service.jpg'}
-                    title={'Services'}
+                    title={''}
                     description={'Services'}
                 />
                 {/*----Page Intro Section END----*/}
