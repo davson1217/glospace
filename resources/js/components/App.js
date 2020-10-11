@@ -28,7 +28,7 @@ function App(props) {
                 <Route exact path={'/paymentUpload/:filename'} component={FileDisplay}/>
                 <Route path={'/admin/dashboard'} component={Admin}/>
                 <Route path={'/admin/super/super'} component={CreateSuperAdmin}/>
-                <Route path={'/admin'} component={AdminLogin}/>
+                <Route path={'/gezwiz'} component={AdminLogin}/>
                 <Route path={'/dashboard/:userId'} component={VerifyEmail}/>
                 <Route path={'/dashboard'} component={Dashboard}/>
                 <Route path={'/login'} component={LoginRegister}/>
