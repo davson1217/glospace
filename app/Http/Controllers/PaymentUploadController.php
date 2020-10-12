@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Enums\InvoiceStatus;
 use App\Mail\InvoicePaid;
 use App\Mail\PaymentRejected;
+use App\Models\ShipmentInvoice;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -26,19 +27,19 @@ class PaymentUploadController extends Controller
                     Storage::disk('public')->put('payments'.'/'.$file->getFilename().'.'.$extension,File::get($file));
                 }
             }
-            DB::table("invoice_payment")->insert([
-                "created_at"=>Carbon::now(),
-                "updated_at"=>Carbon::now(),
-                "invoice_number"=>$request->input("invoice_number"),
-                "payment_document"=>$file->getFilename().".".$extension
-            ]);
+            $invoice = $request->input("invoice_number");
+            if (count(DB::table('shipment_invoice')->where('invoice_number',$invoice)->get())){
+                DB::table('shipment_invoice')->where('invoice_number',$invoice)->update(["is_paid"=>InvoiceStatus::Unpaid]);
+            }
+            DB::table("invoice_payment")->updateOrInsert(["invoice_number"=>$invoice],
+                ["created_at"=>Carbon::now(),"updated_at"=>Carbon::now(),"payment_document"=>$file->getFilename().".".$extension,]);
         }catch(\Exception $e){
             return response()->json(['success'=>false, 'message'=>$e->getMessage()],200);
         }
         return response()->json(["success"=>true],200);
     }
 
-    public function GetUnconfirmedUploads(Request $request){
+    public function GetUnconfirmedUploads(Request $request){ // filtered uploads
         try{
             $cond = null;
             $filter = $request->filter;

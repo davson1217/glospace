@@ -14,7 +14,7 @@ const PaymentCard = props =>{
 
         <div className="payment-card">
            <span onClick={()=>{ window.open(`/paymentUpload/${props.payment.payment_document}`)}}>
-               <img src={`/storage/payments/${props.payment.payment_document}`} alt="Avatar" style={{width:"100%"}}/>
+               <img src={`/storage/payments/${props.payment.payment_document}`} alt="Avatar" style={{width:"100%",height:"100px"}}/>
            </span>
 
             <div className="payment-card-container">
