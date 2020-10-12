@@ -9,5 +9,5 @@ Verify Email
 @endcomponent
 
 Thanks,<br>
-<img src="{{asset('img/GS.png')}}" alt="Glospace" style="width: 100px">
+{{ config('app.name') }}
 @endcomponent

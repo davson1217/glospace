@@ -11,6 +11,6 @@ You may follow the progress of this shipment using the following tracking number
 @endif
 <br><br>
 
-Thank you for using Glospace.
-
+Thanks,<br>
+{{ config('app.name') }}
 @endcomponent

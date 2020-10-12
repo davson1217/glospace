@@ -149,7 +149,7 @@ const ShipmentManagement = (state=initialState, action) => {
             return{
                 ...state,
                 clickedLabel: action.payload.shipmentLabel,
-                progressRange: parseInt(action.payload.shipmentLabel.progress),
+                progressRange: parseInt(action.payload.shipmentLabel.progress_bar),
                 isShowModal: !state.isShowModal
             }
 

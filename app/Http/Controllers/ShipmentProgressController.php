@@ -28,7 +28,7 @@ class ShipmentProgressController extends Controller
                     "location"=>$params["location"],
                 ]);*/
             if ($progress->save() && $params["range"]){
-                DB::table("shipments")->where('id',$params["labelId"])->update(["progress"=>$params["range"]]);
+                DB::table("shipments")->where('id',$params["labelId"])->update(["progress_bar"=>$params["range"]]);
             }
         }catch(\Exception $e){
             return response()->json(['success'=>false, 'message'=>$e->getMessage()],200);

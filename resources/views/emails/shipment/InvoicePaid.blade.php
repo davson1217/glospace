@@ -3,5 +3,6 @@
 
 Dear {{$clientName}}, we can confirm that invoice #{{$invoiceNumber}} has been paid.
 
-Thanks<br>
+Thanks,<br>
+{{ config('app.name') }}
 @endcomponent
