@@ -10,6 +10,7 @@ const LabelView = props =>{
 
     useEffect(()=>{
         props.fetchShipmentProgress(props.store.clickedLabel.tracking_number)
+        // console.log(props.store.clickedLabel.progress)
     },[])
 
         let clients ;
@@ -87,7 +88,7 @@ const LabelView = props =>{
                     <small>{props.headerDesc}</small>
                     <div className="progress">
                         <div className="progress-bar progress-bar-striped progress-bar-animated bg-success"
-                             style={{width:`${props.store.clickedLabel.progress}%`,minHeight:"30px"}}/>
+                             style={{width:`${props.store.clickedLabel.progress_bar}%`,minHeight:"30px"}}/>
                     </div>
                 </div>
 
