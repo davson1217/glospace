@@ -10,4 +10,5 @@ Verify Email
 
 Thanks,<br>
 Glospace Logistics
+{<img src="{{asset('img/GS.png')}}" alt="Glospace">}
 @endcomponent
