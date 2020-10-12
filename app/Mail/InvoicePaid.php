@@ -32,7 +32,7 @@ class InvoicePaid extends Mailable
      */
     public function build()
     {
-        return  $this->from('info@glospacelogistics.com')
+        return  $this->from('info@glospacelogistics.com','Glospace Logistics')
                 ->subject("Invoice Paid")
                 ->with([
                     "invoiceNumber"=>$this->invoiceNumber,

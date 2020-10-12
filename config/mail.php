@@ -84,7 +84,7 @@ return [
     */
 
     'from' => [
-        'address' => env('info@glospacelogistics.com', 'hello@example.com'),
+        'address' => env('info@glospacelogistics.com', 'Glospace Logistics'),
         'name' => env('Glospace Logistics', 'App'),
     ],
 
