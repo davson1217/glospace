@@ -45,7 +45,7 @@ class ShipmentsController extends Controller
                'delivery_note' => $params['deliveryNote'],
                'package_description' => $params['packageDesc'],
                'package_weight' => $params['packageWeight'],
-               'progress' => $params['progressRange']
+               'progress_bar' => $params['progressRange']
             ]);
             DB::table('shipments_progress')->insert([
                 'created_at' => Carbon::now(),
