@@ -35,7 +35,7 @@ class InvoiceCreated extends Mailable
      */
     public function build()
     {
-        return $this
+        return $this->from('info@glospacelogistics.com','Glospace Logistics')
             ->subject("Invoice Available")
             ->with([
                 "trackingNumber"=>$this->shipmentNumber,
