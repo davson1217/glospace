@@ -117,8 +117,9 @@ const About = props => {
                                     <h6 style={styles.sectionSubheadText} className='text-center'>Quality Services</h6>
                                     <div style={styles.underline}/>
                                     <p style={styles.sectionText}>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                        Great service ambience is key to excellent service quality. With our effective service strategy, we focus not just only
+                                        on our customers but also on our employees. We believe if our employees experience excellent quality service on the inside,
+                                        they will be inspired to deliver same on the outside which will give us a rich customer experience.
                                     </p>
                                 </li>
 
@@ -126,8 +127,9 @@ const About = props => {
                                     <h6 style={styles.sectionSubheadText} className='text-center'>Value For Money</h6>
                                     <div style={styles.underline}/>
                                     <p style={styles.sectionText}>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                        Why spend more when you can spend less? Cheapest is not always best value.
+                                        Getting your delivery done reliably and effectively with precision saves you lots.
+                                        We guarantee that you will get the true value for your money.
                                     </p>
                                 </li>
 
@@ -135,8 +137,8 @@ const About = props => {
                                     <h6 style={styles.sectionSubheadText} className='text-center'>Competitive Rates</h6>
                                     <div style={styles.underline}/>
                                     <p style={styles.sectionText}>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                        Our prices are moderate and highly competitive. Without hurting our bottom line, we are sacrificing lots to ensure that our customers
+                                        get rates that are more affordable and competitive.
                                     </p>
                                 </li>
 
@@ -144,8 +146,9 @@ const About = props => {
                                     <h6 style={styles.sectionSubheadText} className='text-center'>Assurance of Goods Safety</h6>
                                     <div style={styles.underline}/>
                                     <p style={styles.sectionText}>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                        The essence of the whole supply chain and logistics services is safety. No safety no goods.
+                                        We prioritize safety and make it our culture. From picking, to packing, storage, freighting,
+                                        clearing and delivery, we ensure that we are guided by safety principles.
                                     </p>
                                 </li>
                             </div>

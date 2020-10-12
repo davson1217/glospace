@@ -8,6 +8,8 @@ const Footer = props =>{
         textAlign:'center',
         marginTop:"30px",
         padding:"5px",
+        fontSize:"14px",
+        fontFamily:"serif",
         // minHeight:'50px',
         // position:"absolute",
         // bottom:"0"
@@ -15,6 +17,8 @@ const Footer = props =>{
     return(
         <div style={styles}>
             <span className='text-muted'> Copyright 2020&copy;</span>
+            <a className='text-muted ml-3' target={'_blank'} href={'/legal/Terms&Conditions.pdf'}>Terms & Conditions</a>
+            <a href={'/legal/privacy.pdf'} target={'_blank'} className="text-muted ml-3" style={{cursor:'pointer'}}>Privacy Policy</a>
         </div>
     )
 }
