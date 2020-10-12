@@ -27,7 +27,7 @@ class UserVerify extends Mailable
         $this->name = $name;
         $this->email = $email;
         $this->userId = $userId;
-        $this->url = "http://127.0.0.1:8000/dashboard/".$userId;
+        $this->url = "https://glospacelogistics.com/dashboard/".$userId;
     }
 
     /**
