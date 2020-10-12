@@ -46,6 +46,7 @@ class UserController extends Controller
             $GSN = strlen($params["GS"]) < 10 ? $params["GS"].rand(0,10 - strlen($params["GS"])) : $params["GS"];
             $user = new User();
             $user->gs_number = $GSN;
+            $user->user_type = UserType::Client;
             $user->name = $params["name"];
             $user->address = $params["address"];
 //            $user->addressTwo = $params["addressTwo"];
