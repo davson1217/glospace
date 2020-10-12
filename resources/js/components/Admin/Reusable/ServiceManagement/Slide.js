@@ -43,7 +43,7 @@ const Slide = props =>{
                 </div>
 
                 <div className="col-sm-12 text-center d-flex justify-content-between card-footer">
-                    <button className="btn btn-warning" disabled={true}>EDIT</button>
+                    {/*<button className="btn btn-warning" disabled={true}>EDIT</button>*/}
                     <button className="btn btn-danger"
                             onClick={()=>props.deleteSlide(props.slide.id,props.slide.bg,props.slide.side_photo)}>
                         DELETE
