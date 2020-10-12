@@ -150,7 +150,7 @@ class ShipmentsController extends Controller
     public function ClientTrackShipment (Request $request){
         try{
             $shipment = DB::table('shipments')
-                        ->select("estimated_delivery","delivery_note","progress as bar","is_show_bar")
+                        ->select("estimated_delivery","delivery_note","progress_bar as bar","is_show_bar")
                         ->where("tracking_number",$request->input("tracking_number"))->get();
             $progress = DB::table('shipments_progress')
                 ->where('shipment_tracking_number',$request->tracking_number)
