@@ -62,7 +62,7 @@ class ShipmentProgressController extends Controller
 
             $progress = DB::table('shipments_progress')
                 ->leftJoin('shipments','shipments.tracking_number','=','shipments_progress.shipment_tracking_number')
-                ->select('shipments_progress.*','shipments.progress_bar as progress', 'shipments.*')
+                ->select('shipments_progress.*','shipments.*')
                 ->where('shipment_tracking_number',$request->trackingNumber)->orderBy('shipments_progress.created_at','desc')->get();
             $progress[0]->sender = $sender;
             $progress[0]->receiver = $receiver;

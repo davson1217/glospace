@@ -9,8 +9,8 @@ import {AddProgressHandler} from "../../../Redux/Actions/ShipmentActions";
 const LabelView = props =>{
 
     useEffect(()=>{
-        props.fetchShipmentProgress(props.store.clickedLabel.tracking_number)
-        // console.log(props.store.clickedLabel.progress)
+        console.log(props.store.clickedLabel)
+        // props.fetchShipmentProgress(props.store.clickedLabel.tracking_number)
     },[])
 
         let clients ;
