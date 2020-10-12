@@ -18,7 +18,7 @@ const Footer = props =>{
         <div style={styles}>
             <span className='text-muted'> Copyright 2020&copy;</span>
             <a className='text-muted ml-3' target={'_blank'} href={'/legal/Terms&Conditions.pdf'}>Terms & Conditions</a>
-            <a href={'/legal/privacy.pdf'} target={'_blank'} className="text-muted ml-3" style={{cursor:'pointer'}}>Privacy Policy</a>
+            <a href={'/legal/Privacy.pdf'} target={'_blank'} className="text-muted ml-3" style={{cursor:'pointer'}}>Privacy Policy</a>
         </div>
     )
 }
