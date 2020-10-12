@@ -12,7 +12,7 @@ class AboutController extends Controller
         try {
             $params = $request->all();
 //            dd($params);
-            Mail::to('info@glospacelogistics.com')
+            Mail::to('support@glospacelogistics.com')
                 ->send(new UserEnquiry($params['name'],$params['email'],$params['subject'],$params['message']));
         }catch (\Exception $e){
             return response()->json(['success'=>false, 'message'=>$e->getMessage()],200);

@@ -38,7 +38,7 @@ class UserEnquiry extends Mailable
      */
     public function build()
     {
-        return $this->from($this->email)
+        return $this->from($this->email,'Glospace Logistics')
             ->subject("ENQUIRY:::".$this->subject)
             ->with([
                 "userName"=>$this->name,

@@ -40,7 +40,7 @@ class ShipmentCreated extends Mailable
      */
     public function build()
     {
-        return $this->from('info@glospacelogistics.com')
+        return $this->from('info@glospacelogistics.com','Glospace Logistics')
             ->subject("Shipment Created")
             ->with([
                 "trackingNumber"=>$this->trackingNumber,
