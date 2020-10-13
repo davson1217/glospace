@@ -17,28 +17,28 @@ const SlideOne = (props) =>{
                                 <div className="row mt-5 p-2">
 
                                     <div className="col-sm-12 text-center mt-5">
-                                        <span id="first-hint">{props.slides[0].intro_text}</span>
+                                        {/*<span id="first-hint">{props.slides[0].intro_text}</span>*/}
                                         {/*<span className="ml-5" id="second-hint">On Time and Safe Delivery</span>*/}
                                     </div>
 
                                     <div className="col-sm-12 mt-3 head-one-wrap">
-                                        <h2>{props.slides[0].header_one}</h2>
+                                        {/*<h2>{props.slides[0].header_one}</h2>*/}
                                     </div>
 
                                     <div className="col-sm-12 head-two-wrap">
-                                        <h2 className="text-center">{props.slides[0].header_two}</h2>
+                                        {/*<h2 className="text-center">{props.slides[0].header_two}</h2>*/}
                                     </div>
 
                                     <div className="col-sm-12 mt-4 track-btn-wrap text-center">
-                                        <button className="btn btn-secondary">
+                                        {/*<button className="btn btn-secondary">
                                             <NavLink to={`${props.slides[0].button_link}`} style={{textDecoration:"none", color:"white"}}>
                                                 {props.slides[0].button_text}
                                             </NavLink>
-                                        </button>
+                                        </button>*/}
                                     </div>
 
                                     <div className="col-sm-12 mt-4 closing-text text-center">
-                                        <p id="third-hint">{props.slides[0].closing_text}</p>
+                                        {/*<p id="third-hint">{props.slides[0].closing_text}</p>*/}
                                     </div>
 
                                 </div>

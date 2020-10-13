@@ -49,6 +49,7 @@ export const TRACKING_VIEW_STYLE = "TRACKING_VIEW_STYLE";//Client Side tracking
 //Dashboard
 export const USER_REGISTERED = "USER_REGISTERED";
 export const USER_EMAIL_VERIFIED = "USER_EMAIL_VERIFIED";
+export const VERIFY_MAIL_RESENT = "VERIFY_MAIL_RESENT";
 export const LOGOUT = "LOGOUT";
 export const LOGIN_ERROR = "LOGIN_ERROR";
 export const NAVIGATE_DASHBOARD = "NAVIGATE_DASHBOARD";

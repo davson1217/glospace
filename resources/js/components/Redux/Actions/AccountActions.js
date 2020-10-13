@@ -68,6 +68,23 @@ export const LoginHandler = data =>{
     }
 }
 
+export const SendPassResetMail = email =>{
+    return dispatch =>{
+        dispatch({type:ActionTypes.API_REQUEST_SENT,payload:{component:"SEND_PASSWORD_RESET_EMAIL"}})
+        axios.post('/api/passwordReset',{email})
+            .then(res=>{
+                dispatch({type:ActionTypes.API_REQUEST_SENT,payload:{component:"SEND_PASSWORD_RESET_EMAIL"}})
+                if (res.data.success){
+                    if (res.data.msg === "Invalid"){
+                        alert('We couldn\'t find that email');
+                        return
+                    }
+                    dispatch({type:'PASS_EMAIL_SENT'})
+                }
+            }).catch(err=>{})
+    }
+}
+
 export const ToggleViewAccount = (accountId,accounts) =>{
     return dispatch =>{
         let account = accounts.filter((item)=>item.id === accountId)[0]

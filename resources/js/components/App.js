@@ -14,6 +14,7 @@ import InvoiceTable from "./Admin/InvoiceDisplay";
 import VerifyEmail from "./DashboardComps/VerifyEmail";
 import AdminLogin from "./Admin/AdminLogin";
 import CreateSuperAdmin from "./Admin/SUPER/CreateSuperAdmin";
+import ResetPassword from "./Login/ResetPassword";
 
 function App(props) {
     const rootRef = useRef(null);
@@ -31,6 +32,7 @@ function App(props) {
                 <Route path={'/gezwiz'} component={AdminLogin}/>
                 <Route path={'/dashboard/:userId'} component={VerifyEmail}/>
                 <Route path={'/dashboard'} component={Dashboard}/>
+                <Route path={'/password-reset/:gsNumber'} component={ResetPassword}/>
                 <Route path={'/login'} component={LoginRegister}/>
                 <Route path={'/track-shipment'} component={TrackShipment}/>
                 <Route path={'/contact'} component={Contact}/>

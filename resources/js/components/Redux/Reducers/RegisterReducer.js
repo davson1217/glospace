@@ -21,6 +21,15 @@ const initialState = {
     loginPassword:"",
 //    :::::::LOGIN PROPS END ::::::::
 
+    passReset:{
+        email:"",
+        emailSent:false,
+    },
+    passChange:{
+        password:"",
+        confirmPassword:"",
+        changed:false,
+    }
 }
 
 const RegisterReducer = (state = initialState, action )=>{
@@ -58,6 +67,29 @@ const RegisterReducer = (state = initialState, action )=>{
                 showHelper: !state.showHelper,
                 focusedInput : action.payload.name
             }
+        case "PASS_EMAIL_RESET":// Password reset email address
+            return{
+                ...state,
+                passReset: {
+                    ...state.passReset,
+                    email:action.payload.value
+                }
+            }
+        case "NEW_PASSWORD":// Password reset email address
+            return{
+                ...state,
+                passChange:{
+                    ...state.passChange,
+                    password: action.payload.name === 'password'? action.payload.value : state.passChange.password,
+                    confirmPassword: action.payload.name === 'confirm'? action.payload.value : state.passChange.confirmPassword
+                }
+            }
+        case "PASS_EMAIL_SENT":{
+            return{ ...state, passReset: {...state.passReset,emailSent: true,email:''}}
+        }
+        case "PASSWORD_CHANGED":{
+            return{ ...state, passChange: {...state.passChange,changed: true,password:'',confirmPassword:''}}
+        }
         default: return state;
     }
 }

@@ -14,6 +14,7 @@ const initialState = {
 
     user:{},
     emailVerifyMessage:"",
+    verificationResent:false,
 
     //:::::Invoice Menu Props :::::::::
     invoiceMenu:{
@@ -39,15 +40,11 @@ const initialState = {
 const DashboardReducer = (state=initialState, action)=>{
     switch (action.type) {
         case ActionTypes.NAVIGATE_DASHBOARD:
-            return {
-                ...state,
-                activeMenu: action.payload.menu
-            }
+            return {...state, activeMenu: action.payload.menu}
+        case ActionTypes.VERIFY_MAIL_RESENT:
+            return {...state,verificationResent: true}
         case ActionTypes.INPUT_HANDLER:
-            return {
-                ...state,
-                [action.payload.name]: action.payload.value
-            }
+            return {...state,[action.payload.name]: action.payload.value}
         case ActionTypes.TOGGLE_CLIENT_MODAL:
             return {
                 ...state,

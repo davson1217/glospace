@@ -1,5 +1,6 @@
 import * as ActionTypes from "./ActionTypes";
 import {APILoader} from "./LayoutActions";
+import {API_SENT} from "./AdminActions";
 const headers = {
     "Content-Type":"application/json",
     "Accept":"application/json",
@@ -21,28 +22,48 @@ export const NavigateDashboard = menu =>{
 
 export const FetchAuthUser = () => {
     return dispatch=>{
+        dispatch({type:ActionTypes.API_REQUEST_SENT,payload:{component:"FETCH_CLIENT"}})
         axios.get("/api/user",{headers:{
                 "Content-Type":"application/json",
                 "Accept":"application/json",
                 "Authorization":"Bearer "+ localStorage.getItem('token')
             }}).
         then(res=>{
+            dispatch({type:ActionTypes.API_REQUEST_SENT,payload:{component:"FETCH_CLIENT"}})
             if (res.data.success){
                 dispatch({type:ActionTypes.FETCHED_USER,payload:{user:res.data.user}})
             }
         }).catch(err=>{
-
+            dispatch({type:ActionTypes.API_REQUEST_SENT,payload:{component:"FETCH_CLIENT"}})
         })
-
     }
 }
+
+export const VerificationMailResend = () => {
+    return dispatch =>{
+        dispatch(API_SENT("RESENDING_VERIFY_EMAIL"))
+        axios.post("/api/emailVerifyResend",null,{headers:{
+                "Content-Type":"application/json",
+                "Accept":"application/json",
+                "Authorization":"Bearer "+ localStorage.getItem('token')
+            }
+        }).then(res=>{
+            if (res.data.success){
+                dispatch({type:ActionTypes.VERIFY_MAIL_RESENT})
+            }
+        }).catch(err=>{
+
+        })
+    }
+}
+
 export const UserEmailVerified = userID =>{
     return dispatch =>{
         dispatch(APILoader("VerifyEmail"))
         axios.post("/api/emailVerified",{userID},{headers:{
                 "Content-Type":"application/json",
                 "Accept":"application/json",
-                "Authorization":"Bearer "+ localStorage.getItem('token')
+                // "Authorization":"Bearer "+ localStorage.getItem('token')
             }
         })
             .then(res=>{

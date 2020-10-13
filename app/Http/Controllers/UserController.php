@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enums\UserType;
+use App\Mail\ResetPassword;
 use App\Mail\UserVerify;
 use App\Models\User;
 use Carbon\Carbon;
@@ -28,8 +29,13 @@ class UserController extends Controller
      * Get Registered User Attributes to send Welcome Email.
      * @param array $user
      */
-    protected function SendVerifyEmail(Array $user){
+    protected function SendVerifyEmail(Array $user = []){
         try {
+            if (!count($user)){
+                $email = Auth::user()->email;
+                Mail::to($email)->send(new UserVerify(Auth::user()->name,$email,Auth::id()));
+                return response()->json(['success'=>true],200);
+            }else
             if(Mail::to($user["email"])->send(new UserVerify($user["name"],$user["email"],$user["id"]))){
                 return response()->json(['success'=>true],200);
             }
@@ -72,13 +78,12 @@ class UserController extends Controller
         try {
 //            dd(Auth::user()->city);
             $param = $request->input("userID");
-            if ($param == Auth::id() && !Auth::user()->email_verified_at){
+            if (User::find($param)){
                 DB::table('users')->where('id',$param)->update(["email_verified_at"=>Carbon::now()]);
                 return response(["success"=>true,"msg"=>"Verified"]);
-            }elseif ($param == Auth::id() && Auth::user()->email_verified_at){
-                return response(["success"=>true,"msg"=>"PreviouslyVerified"]);
-            }else
+            }else{
                 return response(["success"=>true,"msg"=>"Invalid"]);
+            }
         }catch (\Exception $e){
             return response()->json(['success'=>false, 'message'=>$e->getMessage()],200);
         }
@@ -142,6 +147,41 @@ class UserController extends Controller
                 }else
             DB::table('users')->where('id',Auth::id())->update([$params['name']=>$params['change']]);
 
+        }catch (\Exception $e){
+            return response()->json(['success'=>false, 'message'=>$e->getMessage()],200);
+        }
+        return response()->json(['success'=>true],200);
+    }
+
+    public function PasswordReset(Request $request){
+        try{
+            $email = $request->input('email');
+            if (count(User::where('email',$email)->get())){
+                $user = User::where('email',$email)->get();
+                Mail::to($user[0])->send(new ResetPassword($user[0]->name,$user[0]->gs_number));
+            }else{
+                return response()->json(['success'=>true, "msg"=>"Invalid"],200);
+            }
+        }catch (\Exception $e){
+            return response()->json(['success'=>false, 'message'=>$e->getMessage()],200);
+        }
+        return response()->json(['success'=>true],200);
+    }
+
+    public function ChangePassword(Request $request){
+        try{
+            DB::table('users')->where('gs_number',$request->input('GSN'))
+                ->update(['password'=>Hash::make($request->input('password'))]);
+        }catch (\Exception $e){
+            return response()->json(['success'=>false, 'message'=>$e->getMessage()],200);
+        }
+        return response()->json(['success'=>true],200);
+    }
+
+    public function DeleteClient(){
+        try {
+            $user = User::find(Auth::id());
+            $user->delete();
         }catch (\Exception $e){
             return response()->json(['success'=>false, 'message'=>$e->getMessage()],200);
         }

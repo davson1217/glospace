@@ -11,7 +11,7 @@ const DashboardMenu = (props) => {
             <li className="col-sm-3 text-center" onClick={()=>props.navigateDashboard("Invoice")}
                 style={{borderBottom:props.activeMenu === "Invoice" ? "2px solid black" : null}}
             >
-                <img src={"/img/invoice.svg"} alt="shipments"/></li>
+            <img src={"/img/invoice.svg"} alt="shipments"/></li>
 
             {/*<li className="col-sm-3 text-center" onClick={()=>props.navigateDashboard("Message")}
                 style={{borderBottom:props.activeMenu === "Message" ? "2px solid black" : null}}

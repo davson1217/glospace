@@ -14,17 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// client-side protected routes
+//:::::::::::::::::::::::::::::::Public Routes:::::::::::::::::::::::::::::::::
 Route::post('/registerUser','App\Http\Controllers\UserController@Register');
 Route::post('/createSuperAdmin','App\Http\Controllers\UserController@CreateSuper');
 Route::get('/slides','App\Http\Controllers\SlidesController@All');
 Route::get('/services','App\Http\Controllers\ServiceController@All');
 Route::post('/enquiry','App\Http\Controllers\AboutController@ContactUs');
-//Route::get('/enquiry','App\Http\Controllers');
-
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-//    return response()->json(["success"=>true,"user"=>$request->user()]);
-//});
+//user verify
+Route::post('/emailVerified','App\Http\Controllers\UserController@EmailVerified');
+Route::post('/passwordReset','App\Http\Controllers\UserController@PasswordReset');//Send Reset Email
+Route::post('/changePassword','App\Http\Controllers\UserController@ChangePassword');
+//:::::::::::::::::::::::::::::::Public Routes:::::::::::::::::::::::::::::::::
 
 
 Route::middleware("auth:api")->group(function(){
@@ -34,10 +34,11 @@ Route::middleware("auth:api")->group(function(){
     Route::get('/user', function (Request $request){
         return response()->json(["success"=>true,"user"=>$request->user()]);
     });
+    Route::delete('/user','App\Http\Controllers\UserController@DeleteClient');
+    Route::post('/emailVerifyResend','App\Http\Controllers\UserController@SendVerifyEmail');
     //user update
     Route::post('/updateUser','App\Http\Controllers\UserController@Update');
-    //user verify
-    Route::post('/emailVerified','App\Http\Controllers\UserController@EmailVerified');
+
     //Invoice Routes
     Route::get("/invoices",'App\Http\Controllers\ShipmentInvoiceController@SortInvoice');
     Route::post("/receiptUpload",'App\Http\Controllers\PaymentUploadController@PaymentUpload');

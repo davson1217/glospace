@@ -8,8 +8,9 @@ import Register from "./Login/Register";
 import './Styles/LoginReg.css'
 import {NavLink, withRouter,useHistory } from 'react-router-dom';
 import {InputHandler} from "./Redux/Actions/AdminActions";
-import {LoginHandler, RegisterUserHandler} from "./Redux/Actions/AccountActions";
+import {LoginHandler, RegisterUserHandler,SendPassResetMail} from "./Redux/Actions/AccountActions";
 import Feedback from "./Redux/Feedback";
+import ForgotPassword from "./Login/ForgotPassword";
 
 
 const LoginRegister = props =>{
@@ -49,6 +50,13 @@ const LoginRegister = props =>{
                            feedback={props.Feedback}
                     />
                         :
+                    props.layout.loginPage === "FORGOT_PASS" ?
+                    <ForgotPassword
+                        component={props.Feedback.requestingComp} request={props.Feedback.isSentAPI}
+                        emailSent={props.Register.passReset.emailSent} goBack={props.switchPage}
+                        changeHandler={props.passEmailHandler} email={props.Register.passReset.email}
+                        resetRequest={props.sendPassResetMail}
+                    />:
                     <Register
                          switchPage={props.switchPage}
                          firstName={props.Register.firstName}
@@ -88,7 +96,12 @@ const MapDispatch = dispatch =>{
         switchPage : page => dispatch(SwitchLoginPage(page)),
         inputHandler : (name,e,comp) => dispatch(InputHandler(name,e,comp)),
         registerUser : (e,data) => {e.preventDefault();dispatch(RegisterUserHandler(data))},
-        loginHandler : (data) => {dispatch(LoginHandler(data))}
+        loginHandler : (data) => {dispatch(LoginHandler(data))},
+        sendPassResetMail : (email) => {dispatch(SendPassResetMail(email))},
+        passEmailHandler : (event) => dispatch({
+            type: "PASS_EMAIL_RESET",
+            payload:{value:event.target.value}
+        }),
     }
 }
 export default connect(MapState,MapDispatch)(withRouter(LoginRegister));

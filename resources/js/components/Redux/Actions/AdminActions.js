@@ -269,7 +269,7 @@ export const ClientPaymentUploads = (filter) => {
     }
 }
 
-const API_SENT = (component) =>{
+export const API_SENT = (component) =>{
     return dispatch =>{
         dispatch({
             type:ActionTypes.API_REQUEST_SENT,

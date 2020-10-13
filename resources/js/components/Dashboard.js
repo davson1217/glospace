@@ -13,7 +13,9 @@ import * as ActionTypes from "./Redux/Actions/ActionTypes";
 import UserDetails from "./Reusable/UserDetails";
 import InvoiceMenu from "./DashboardComps/InvoiceMenu";
 import Settings from "./DashboardComps/Settings";
-
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import Loader from 'react-loader-spinner';
+import UserNotVerified from "./DashboardComps/UserNotVerified";
 const Dashboard = props =>{
     const history = useHistory();
 
@@ -26,18 +28,36 @@ const Dashboard = props =>{
         props.fetchUser()
     },[])
 
-
     //::::::::: Dashboard Menu Content Navigation :::::::::::::
+        let API_MOMENT = props.feedback.isSentAPI && props.feedback.requestingComp === "FETCH_CLIENT";
+        let VERIFY_API_MOMENT = props.feedback.isSentAPI && props.feedback.requestingComp === "RESENDING_VERIFY_EMAIL";
+
+        let userIsVerified =  props.dashboard.user.email_verified_at;
+
+        let notVerified = <UserNotVerified
+            sentMail={props.dashboard.verificationResent}
+            sendingMail={VERIFY_API_MOMENT} resendVerification={()=>props.resendVerification()}
+        />
+
         let activeMenu;
+        if (API_MOMENT){
+            activeMenu = <div className='text-center'>
+                <Loader type="ThreeDots" color="black" height={100} width={100}/>
+            </div>;
+        }else
         if (props.dashboard.activeMenu === "Shipment"){
-            activeMenu = <TrackingForm dashboard={props.dashboard} inputHandler={props.inputHandler} trackShipment={props.trackShipment}/>;
+                activeMenu = userIsVerified ?
+                <TrackingForm
+                    dashboard={props.dashboard}
+                    inputHandler={props.inputHandler}
+                    trackShipment={props.trackShipment}
+                /> : notVerified;
 
         }else if (props.dashboard.activeMenu === "Invoice"){
-            activeMenu = <InvoiceMenu/>
-
+            activeMenu = userIsVerified ? <InvoiceMenu/> : notVerified
         }else if (props.dashboard.activeMenu === "Message"){
             activeMenu = <h2 className="text-center">You currently have no messages</h2>
-        }else activeMenu = <Settings/>
+        }else activeMenu = userIsVerified ? <Settings/> : notVerified;
     //::::::::: Dashboard Menu Content Navigation :::::::::::::
 
 
@@ -91,13 +111,15 @@ const Dashboard = props =>{
 
 const MapState = state =>{
     return {
-        dashboard: state.Dashboard
+        dashboard: state.Dashboard,
+        feedback: state.Feedback,
     }
 }
 
 const MapDispatch = dispatch =>{
     return {
         fetchUser: () => {dispatch(Actions.FetchAuthUser())},
+        resendVerification: () => {dispatch(Actions.VerificationMailResend())},
         navigateDashboard: (menu) => dispatch(Actions.NavigateDashboard(menu)),
         inputHandler: (name,e,comp) => dispatch(InputHandler(name,e,comp)),
         closeModal:()=>dispatch({type:"TOGGLE_CLIENT_MODAL"}),

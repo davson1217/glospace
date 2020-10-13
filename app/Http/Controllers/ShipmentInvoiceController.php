@@ -48,11 +48,20 @@ class ShipmentInvoiceController extends Controller
             $invoice->cost = $params["amount"];
             $invoice->currency = $params["currency"];
             $invoice->is_paid = InvoiceStatus::Unpaid;
-            $invoice->user_gs_number = $params["user_gs"];
+            $invoice->user_gs_number = $params["user_gs"];//we're storing available GS number here. In the event either of both clients do not have a GSN
             $invoice->description = $params["invoiceNote"] ? $params["invoiceNote"] : null;
+
             if ($invoice->save()){
-                $user = User::where("gs_number",$params["user_gs"])->get();
-                Mail::to($user[0]->email)->send(new InvoiceCreated($user[0]->name,$params["tracking_number"],$params["invoiceNote"]));
+                //Send Invoice mail to shipment sender
+                $sender = DB::table('shipments')->where('tracking_number',$params["tracking_number"])->pluck('sender_user_gs_number');
+//                dd($sender);
+                if ($sender[0] !== null){
+                    $user = User::where("gs_number",$sender[0])->get();
+                    Mail::to($user[0])->send(new InvoiceCreated($user[0]->name,$params["tracking_number"],$params["invoiceNote"]));
+                }else{
+                    $user = DB::table('shipment_sender_information')->where('shipment_tracking_number',$params["tracking_number"])->get();
+                    Mail::to($user[0]->email)->send(new InvoiceCreated($user[0]->name,$params["tracking_number"],$params["invoiceNote"]));
+                }
             }
         }catch (\Exception $e){
             return response()->json(['success'=>false, 'message'=>$e->getMessage()],200);

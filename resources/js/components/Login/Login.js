@@ -10,7 +10,7 @@ const Login = props =>{
         LoginContainer:{
             border:"1px solid lightgrey",
             boxShadow: "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
-            backgroundColor:"white"
+            backgroundColor:"white",
         },
         LoginText:{
             marginBottom: "15px"
@@ -57,6 +57,12 @@ const Login = props =>{
 
                 </div>
             </form>
+
+            <div className="p-1 ml-3">
+                <span style={{cursor:'pointer',fontSize:'14px',fontFamily:'serif',color:'blue'}}
+                      onClick={()=>props.switchPage("FORGOT_PASS")}>Forgot Password?</span>
+            </div>
+
             <div className="register-btn-wrapper text-right mt-3 p-4">
                 <span style={styles.switchBtn} onClick={()=>props.switchPage("REGISTER")}>Create Account</span>
             </div>
