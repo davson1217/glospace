@@ -24,7 +24,7 @@ const TrackingForm = props =>{
                         {props.dashboard.isRequestTracking?
                             <button className="btn btn-dark" type={"button"} disabled={true}>Tracking...</button>:
                             <button className=""
-                                    disabled={props.dashboard.trackingNumber.length !== 13 || ! props.dashboard.trackingNumber}
+                                    disabled={!props.dashboard.trackingNumber}
                                     style={{width:"120px",height:"40px",backgroundColor:'black',color:'white'}}
                                     onClick={e=>props.trackShipment(e,props.dashboard.trackingNumber)}
                             >Track</button>
