@@ -33,7 +33,11 @@ export const FetchAccountByGS = (GSN,category) => {
     // console.log(category)
     return dispatch =>{
         // if (GSN.length === 10){
-            axios.post('/api/checkGSNumber',{number:GSN},{headers})
+            axios.post('/api/checkGSNumber',{number:GSN},{headers:{
+                    "Content-Type":"application/json",
+                    "Accept":"application/json",
+                    "Authorization":"Bearer "+ localStorage.getItem('adminToken')
+                }})
                 .then(res=>{
                     if (res.data.success){
                         dispatch({

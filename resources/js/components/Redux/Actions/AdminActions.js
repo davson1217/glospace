@@ -69,7 +69,11 @@ export const InputHandler = (name,event,component) =>{
             case "Tracking":
                 if (event.target.name === 'gs-number'){//GSNtoCheck
                     if (event.target.value.length === 10){
-                        axios.post('/api/checkGSNumber',{number:event.target.value},{headers})
+                        axios.post('/api/checkGSNumber',{number:event.target.value},{headers:{
+                                "Content-Type":"application/json",
+                                "Accept":"application/json",
+                                "Authorization":"Bearer "+ localStorage.getItem('adminToken')
+                            }})
                             .then(res=>{
                                 if (res.data.success){
                                     dispatch({
