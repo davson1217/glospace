@@ -48,7 +48,7 @@ class ShipmentInvoiceController extends Controller
             $invoice->cost = $params["amount"];
             $invoice->currency = $params["currency"];
             $invoice->is_paid = InvoiceStatus::Unpaid;
-            $invoice->user_gs_number = $params["user_gs"];//we're storing available GS number here. In the event either of both clients do not have a GSN
+            $invoice->user_gs_number = $params["user_gs"];//we're storing available GS number here (sender's by default). In the event either of both clients do not have a GSN trace this to Label.js
             $invoice->description = $params["invoiceNote"] ? $params["invoiceNote"] : null;
 
             if ($invoice->save()){

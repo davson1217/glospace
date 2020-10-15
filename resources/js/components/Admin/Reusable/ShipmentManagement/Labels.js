@@ -38,15 +38,17 @@ const Labels = props => {
 
 
     /**
-     * Collect shipment receiver's GSN for system to send 'invoice-create' email(default)
-     * If receiver has no GSN (i.e not registered) collect Sender's
+     * 'All invoice-related functions must be directed to package sender' - OGEDS
+     *
+     * Collect shipment sender's GSN for system to send 'invoice-create' email(default)
+     * If Sender has no GSN (i.e not registered) collect Receiver's
      * Prop Source:::: ManageShipment.js shipmentLabels map
      * */
         let userGSN;
-        if (props.label.receiver_user_gs_number){
-            userGSN = props.label.receiver_user_gs_number;
-        }else if(props.label.sender_user_gs_number){
+        if (props.label.sender_user_gs_number){
             userGSN = props.label.sender_user_gs_number;
+        }else if(props.label.receiver_user_gs_number){
+            userGSN = props.label.receiver_user_gs_number;
         }else userGSN= null;
     /** END of User GSN Collection
      * */
