@@ -52,11 +52,11 @@ const InvoiceTable = (props) => {
                                 {props.invoice[0].receiver[0].gs_number?props.invoice[0].receiver[0].gs_number: <small><b>No GSN</b></small>}
                             </div>
                             <div className="col-sm-4 invoice-clients mt-1">
-                                <h6 className='clients-headers'>Glospace LLC</h6>
+                                <h6 className='clients-headers'>Glospace Logistics LLC</h6>
                                 Merab Kostava 26 Floor 5, Flat 14<br/>
                                 Customer Support: +995 591 880 567<br/>
-                                sales@glospace.com<br/>
-                                www.glospace.com
+                                sales@glospacelogistics.com<br/>
+                                www.glospacelogistics.com
                             </div>
                         </div>
                     </div>
