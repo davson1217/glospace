@@ -56,7 +56,7 @@ const InvoiceTable = (props) => {
                                 Merab Kostava 26 Floor 5, Flat 14<br/>
                                 Customer Support: +995 591 880 567<br/>
                                 sales@glospacelogistics.com<br/>
-                                www.glospacelogistics.com.
+                                www.glospacelogistics.com
                             </div>
                         </div>
                     </div>

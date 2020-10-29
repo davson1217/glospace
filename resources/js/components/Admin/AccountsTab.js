@@ -60,10 +60,14 @@ const AccountsTab = props =>{
                     <hr/>
 
                     {/* Account List */}
-                    <ul>
-                        {accounts}
-                    </ul>
-
+                    <div>
+                        <div className="text-center bg-dark">
+                            <span className="text-warning">Number of Clients: <b className="">({props.accounts.length})</b></span>
+                        </div>
+                        <ul>
+                            {accounts}
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
