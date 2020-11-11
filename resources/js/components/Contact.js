@@ -103,13 +103,18 @@ const Contact = props => {
                                             </div>
 
                                             <div className="col-sm-12 mt-3 text-right send-message-wrap">
-                                                <button disabled={!props.layout.clientFirstName ||
-                                                !props.layout.clientLastName ||
-                                                !props.layout.clientEmail ||
-                                                !props.layout.querySubject ||
-                                                !props.layout.query }>
-                                                    Send Message
-                                                </button>
+                                                {
+                                                    props.layout.enquiry_API?<button disabled={true}>
+                                                        Working... <span className="spinner-border spinner-border-sm"/>
+                                                    </button> :
+                                                    <button disabled={!props.layout.clientFirstName ||
+                                                    !props.layout.clientLastName ||
+                                                    !props.layout.clientEmail ||
+                                                    !props.layout.querySubject ||
+                                                    !props.layout.query }>
+                                                        Send Message
+                                                    </button>
+                                                }
                                             </div>
 
                                         </div>

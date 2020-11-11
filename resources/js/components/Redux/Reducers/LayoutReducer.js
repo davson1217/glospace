@@ -21,6 +21,7 @@ const initialState = {
     isSentRequest:false,
     requestComponent:"",
     //contact props
+    enquiry_API:false,
     clientFirstName:"",
     clientLastName:"",
     clientEmail:"",
@@ -76,6 +77,21 @@ const LayoutReducer = (state = initialState, action) =>{
                 ...state,
                isSentRequest: !state.isSentRequest,
                 requestComponent: action.payload.component
+            }
+        case "SENDING_ENQUIRY" :
+            return{
+                    ...state,
+                    enquiry_API : true,
+                }
+        case ActionTypes.ENQUIRY_SENT :
+            return{
+                ...state,
+                clientFirstName:"",
+                clientLastName:"",
+                clientEmail:"",
+                querySubject:"",
+                query:"",
+                enquiry_API:false
             }
         default : return state;
     }

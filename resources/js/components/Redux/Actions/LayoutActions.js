@@ -49,9 +49,12 @@ export const PageScroll = (e) =>{
 
 export const SubmitEnquiry = (data) =>{
     return dispatch =>{
+            dispatch({type:"SENDING_ENQUIRY"})
             axios.post('/api/enquiry',data)
                 .then(res=>{
-
+                    if (res.data.success){
+                        dispatch({type:ActionTypes.ENQUIRY_SENT})
+                    }
                 }).catch(err=>{})
     }
 }
