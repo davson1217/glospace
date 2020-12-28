@@ -78,7 +78,7 @@ export const UserEmailVerified = userID =>{
             .catch(err=>{})
     }
 }
-//:::::::::::Dashboard Tracking Actions::::::::::::::::
+//:::::::::::Dashboard Tracking Actions::::::::::::::::Client
 export const TrackShipment = tracking_number =>{
     return dispatch =>{
         dispatch({type:ActionTypes.TRACKING_REQUEST_SENT})
