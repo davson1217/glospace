@@ -59,6 +59,11 @@ const SideBar = props =>{
                      style={props.admin.activeTab === "Accounts" ? styles.activeStyle : null}>
                     Clients {/*{accountTabs}*/}
                 </div>
+                <div onClick={()=>props.navigateMenu("Messaging")} className="admin-nav-menu"
+                //     style={props.admin.activeTab === "Messaging" ? styles.activeStyle : null}
+                >
+                    Messaging
+                </div>
                 <div onClick={()=>props.navigateMenu("Invoice")} className="admin-nav-menu"
                      style={props.admin.activeTab === "Invoice" ? styles.activeStyle : null}>
                     Payments
@@ -68,6 +73,7 @@ const SideBar = props =>{
                     Shipment
                     {shipmentTabs}
                 </div>
+
                 <div className="text-danger">
                     <button className="btn btn-dark"  onClick={()=>{
                         localStorage.removeItem("adminToken");

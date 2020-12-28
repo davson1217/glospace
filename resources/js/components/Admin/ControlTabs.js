@@ -9,12 +9,14 @@ import UnVerifiedAccounts from "./Reusable/AccountManagement/UnVerifiedAccounts"
 import CreateShipmentTab from "./CreateShipmentTab";
 import ManageShipments from "./ManageShipments";
 import Payments from "./Payments";
+import MessageType from "./Messaging/MessageType";
 
 const ControlTabs = props =>{
 
     let ActiveTab = <AboutTab/>
 
     switch (props.activeTab) {
+
         case "Services":
             ActiveTab = <ServicesTab
                 toggleModal={props.modalToggle}
@@ -25,6 +27,7 @@ const ControlTabs = props =>{
                 deleteService={props.deleteService}
             />;
             break;
+
         case "Slides":
             ActiveTab = <SlidesTab
                 toggleModal={props.modalToggle}
@@ -34,12 +37,19 @@ const ControlTabs = props =>{
                 deleteSlide={props.deleteSlide}
             />;
             break;
+
         case "About":
             ActiveTab = <AboutTab/>;
             break;
+
         case "Invoice":
             ActiveTab = <Payments/>
             break;
+
+        case "Messaging":
+            ActiveTab = <MessageType/>
+            break;
+
         case "Accounts":
             if (props.accountTab === "All"){
                 ActiveTab = <AccountsTab
@@ -57,8 +67,8 @@ const ControlTabs = props =>{
             if (props.shipmentTab === "Create"){
                 ActiveTab = <CreateShipmentTab/>
             }else ActiveTab = <ManageShipments/>
+            break;
 
-                break;
         default: alert("UNKNOWN ERROR");
     }
 

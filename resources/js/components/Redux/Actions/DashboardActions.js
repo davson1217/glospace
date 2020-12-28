@@ -85,7 +85,7 @@ export const TrackShipment = tracking_number =>{
             axios.get("/api/clientTracking",{headers:{
                     "Content-Type":"application/json",
                     "Accept":"application/json",
-                    "Authorization":"Bearer "+ localStorage.getItem('adminToken')
+                    "Authorization":"Bearer "+ localStorage.getItem('token')
                 },params:{tracking_number}}).
             then(res=>{
                 if (res.data.success){
